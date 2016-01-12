@@ -7,6 +7,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
+import com.javamongodb.connect.ConnectMongoDb;
+
 /**
  * Hello world!
  *
@@ -21,7 +23,8 @@ public class HelloWorldREST {
 			@DefaultValue("Nothing to say") @QueryParam("value") String value) {
 
 		String output = "Hello from : " + parameter + " : " + value;
-
+		ConnectMongoDb dbcon = new ConnectMongoDb();
+		dbcon.connectDatabases();
 		return Response.status(200).entity(output).build();
 	}
 }
