@@ -20,7 +20,7 @@ public class HelloWorldREST {
 	public Response responseMsg( @PathParam("parameter") String parameter,
 			@DefaultValue("Nothing to say") @QueryParam("value") String value) {
 
-		String output = "Hello from: " + parameter + " : " + value;
+		String output = "Hello from : " + parameter + " : " + value;
 
 		return Response.status(200).entity(output).build();
 	}
